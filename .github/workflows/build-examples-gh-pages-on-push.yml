@@ -2,11 +2,10 @@ name: "ESP-IDF build examples to github pages (push)"
 
 on:
   push:
-      branches:
+    branches:
       - master
 
 jobs:
-
   build:
     strategy:
       matrix:
@@ -17,7 +16,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
 
       - name: Upgrade component manager
         shell: bash
@@ -26,7 +25,7 @@ jobs:
           pip install idf-component-manager==1.* --upgrade
 
       - name: Action for building binaries and config.toml
-        uses: espressif/idf-examples-launchpad-ci-action@v1.0.1
+        uses: XDanielPaul/idf-examples-launchpad-ci-action@v1
         with:
           idf_version: ${{ matrix.idf_ver }}
 
