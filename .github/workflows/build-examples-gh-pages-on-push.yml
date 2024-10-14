@@ -22,9 +22,8 @@ jobs:
         shell: bash
         run: |
           . ${IDF_PATH}/export.sh
-          pip install idf-component-manager==1.* --upgrade
+          pip install idf-component-manager==2.* --upgrade
 
-      # This action is used to build binaries and config.toml
       - name: Action for building binaries and config.toml
         uses: XDanielPaul/idf-examples-launchpad-ci-action@v1
         with:
