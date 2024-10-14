@@ -3,7 +3,7 @@ examples:
   disable:
     - if: CONFIG_NAME in ["esp-box", "esp-box-lite"]
       reason: Do not build examples for deprecated BSPs
-    - if: IDF_VERSION_MAJOR < 5 and IDF_VERSION_MINOR < 3 and CONFIG_NAME == "esp32_p4_function_ev_board"
+    - if: (IDF_VERSION_MAJOR < 5 and IDF_VERSION_MINOR < 3) and CONFIG_NAME == "esp32_p4_function_ev_board"
       reason: Example depends on BSP, which is supported only for IDF >= 5.3
 
 # Noglib test_app: Build only in CI, where ENV_BUILD_NOGLIB is set
